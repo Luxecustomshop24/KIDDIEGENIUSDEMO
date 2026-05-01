@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KiddieGenius 🎉</title>
+  <!-- Nunito: rounded, highly readable child-friendly font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="KiddieGenius Home">
+        <span class="logo-icon" aria-hidden="true">🧠</span>
+        <span class="logo-text">KiddieGenius</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#activities" class="nav-link">Activities</a>
+        <a href="#about"      class="nav-link">About</a>
+        <a href="#contact"    class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-content">
+        <h1 id="hero-heading" class="hero-title">
+          Learn, Play &amp; Grow! 🌟
+        </h1>
+        <p class="hero-subtitle">
+          Fun learning adventures made just for curious kids like you!
+        </p>
+        <a href="#activities" class="btn btn-primary btn-xl">
+          Start Exploring 🚀
+        </a>
+      </div>
+      <div class="hero-illustration" aria-hidden="true">
+        <div class="bubble bubble-1">🎨</div>
+        <div class="bubble bubble-2">📚</div>
+        <div class="bubble bubble-3">🎵</div>
+        <div class="bubble bubble-4">🔢</div>
+        <div class="bubble bubble-5">🌈</div>
+      </div>
+    </section>
+
+    <!-- ===== ACTIVITIES ===== -->
+    <section class="activities" id="activities" aria-labelledby="activities-heading">
+      <div class="section-inner">
+        <h2 id="activities-heading" class="section-title">
+          Pick Your Adventure! 🎮
+        </h2>
+        <div class="cards-grid">
+
+          <article class="card card--purple" tabindex="0" role="button" aria-label="Math Games">
+            <div class="card-icon" aria-hidden="true">🔢</div>
+            <h3 class="card-title">Math Games</h3>
+            <p class="card-desc">Count, add &amp; have fun with numbers!</p>
+            <span class="card-badge">Ages 3–8</span>
+          </article>
+
+          <article class="card card--orange" tabindex="0" role="button" aria-label="Reading Fun">
+            <div class="card-icon" aria-hidden="true">📖</div>
+            <h3 class="card-title">Reading Fun</h3>
+            <p class="card-desc">Discover amazing stories and learn new words!</p>
+            <span class="card-badge">Ages 4–9</span>
+          </article>
+
+          <article class="card card--green" tabindex="0" role="button" aria-label="Art Studio">
+            <div class="card-icon" aria-hidden="true">🎨</div>
+            <h3 class="card-title">Art Studio</h3>
+            <p class="card-desc">Draw, colour, and create masterpieces!</p>
+            <span class="card-badge">Ages 2–10</span>
+          </article>
+
+          <article class="card card--blue" tabindex="0" role="button" aria-label="Music &amp; Rhythm">
+            <div class="card-icon" aria-hidden="true">🎵</div>
+            <h3 class="card-title">Music &amp; Rhythm</h3>
+            <p class="card-desc">Sing, clap, and dance to cool beats!</p>
+            <span class="card-badge">Ages 2–8</span>
+          </article>
+
+          <article class="card card--pink" tabindex="0" role="button" aria-label="Science Lab">
+            <div class="card-icon" aria-hidden="true">🔬</div>
+            <h3 class="card-title">Science Lab</h3>
+            <p class="card-desc">Explore how the world works with fun experiments!</p>
+            <span class="card-badge">Ages 5–10</span>
+          </article>
+
+          <article class="card card--yellow" tabindex="0" role="button" aria-label="Puzzle Time">
+            <div class="card-icon" aria-hidden="true">🧩</div>
+            <h3 class="card-title">Puzzle Time</h3>
+            <p class="card-desc">Solve tricky puzzles and train your brain!</p>
+            <span class="card-badge">Ages 3–9</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ACHIEVEMENTS ===== -->
+    <section class="achievements" aria-labelledby="achievements-heading">
+      <div class="section-inner">
+        <h2 id="achievements-heading" class="section-title">
+          Earn Cool Badges! 🏆
+        </h2>
+        <div class="badges-row">
+          <div class="badge-item">
+            <span class="badge-emoji">⭐</span>
+            <span class="badge-label">Star Reader</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-emoji">🥇</span>
+            <span class="badge-label">Math Champ</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-emoji">🎨</span>
+            <span class="badge-label">Art Wizard</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-emoji">🚀</span>
+            <span class="badge-label">Explorer</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-emoji">🌈</span>
+            <span class="badge-label">Rainbow Kid</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="section-inner about-inner">
+        <div class="about-text">
+          <h2 id="about-heading" class="section-title">
+            Why KiddieGenius? 💡
+          </h2>
+          <ul class="about-list">
+            <li>🎯 Learning games designed by child educators</li>
+            <li>🔒 Safe, ad-free environment for kids</li>
+            <li>📊 Track progress &amp; celebrate every win</li>
+            <li>🌍 Available on all devices — phone, tablet, laptop</li>
+          </ul>
+          <a href="#activities" class="btn btn-secondary">
+            Try for Free 🎉
+          </a>
+        </div>
+        <div class="about-illustration" aria-hidden="true">
+          <div class="big-emoji">🌟</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <p class="footer-brand">
+        <span aria-hidden="true">🧠</span> KiddieGenius
+      </p>
+      <p class="footer-copy">
+        Made with ❤️ for young learners everywhere.
+      </p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#" class="footer-link">Privacy</a>
+        <a href="#" class="footer-link">Parents</a>
+        <a href="#" class="footer-link">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

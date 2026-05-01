@@ -1,6 +1,47 @@
-# KiddieGenius 🧠
+# Kiddie Genius World 🌍
 
 A child-friendly educational web app designed to make learning fun, safe, and accessible for kids aged 2–10.
+
+---
+
+## Screenshots
+
+| Above the fold |
+|---|
+| ![Above the fold](https://github.com/user-attachments/assets/88d98aca-cbac-4e0d-8303-e0f6f34c08b5) |
+
+---
+
+## Mascot — Gray the Cheetah Cub 🐆
+
+**Gray** is a 4-year-old cartoon cheetah cub and the mascot/narrator of Kiddie Genius World. He wears a blue baseball cap bearing the Kiddie Genius World globe logo and has bright blue eyes.
+
+| Location | Role |
+|----------|------|
+| **Hero** | Greets kids with a speech bubble: *"Hi! I'm Gray! Let's learn something amazing today!"* |
+| **Activities** | Narrator tip box above the activity cards |
+| **Meet Gray** | Dedicated section introducing Gray to new users |
+| **Footer** | Waves goodbye at the bottom of the page |
+
+To use the official character art, overwrite `assets/gray.svg` with the real photo (`Graycheetah3.jpg`) and update the `src` in `index.html`.
+
+---
+
+## Brand Assets
+
+| File | Usage |
+|------|-------|
+| `assets/logo.svg` | Globe logo in header, about section, footer |
+| `assets/gray.svg` | Gray the cheetah mascot throughout |
+
+### Cover Banner
+
+The hero banner uses the **official Facebook cover photo** (`fbcoverkgw.png`) loaded from GitHub CDN.
+If that URL is unavailable (local dev without internet), an `onerror` handler activates a CSS fallback
+banner (`.brand-banner--css`) that replicates the sky-blue gradient and rainbow brand text.
+
+**For production:** either keep the GitHub CDN URL or download `fbcoverkgw.png` to `assets/cover.png`
+and update the `src` attribute.
 
 ---
 
@@ -13,64 +54,49 @@ A child-friendly educational web app designed to make learning fun, safe, and ac
 | `--font-primary` | `'Nunito'` (Google Fonts) | All UI text |
 | `--fs-xs` – `--fs-3xl` | 14 px – 48 px scale | Headings, body, labels |
 
-**Why Nunito?**  
-Nunito uses fully rounded terminals making letters easy to distinguish. It is optimised for screen readability at small sizes and has a friendly, approachable personality — ideal for children. Only weights 400, 600, 700, 800, and 900 are loaded to keep page load fast.
+**Why Nunito?** Fully rounded terminals match the official logo lettering style. Weights 400–900 only.
 
----
+### Colour Palette — extracted from the cover artwork lettering
 
-### Colour Palette
+| Token | Hex | Source |
+|-------|-----|--------|
+| `--clr-red` | `#e63329` | "Kiddie" red |
+| `--clr-yellow` | `#ffc107` | "Genius" yellow |
+| `--clr-green` | `#4caf28` | "World" green |
+| `--clr-blue` | `#2b7de9` | Globe ocean / sky |
+| `--clr-navy` | `#162b6e` | Logo outline |
+| `--clr-orange` | `#fd7c1e` | Rocket / warmth |
 
-| Token | Hex | Use |
-|-------|-----|-----|
-| `--clr-bg` | `#fffbf0` | Page background (warm cream) |
-| `--clr-primary` | `#ff6b6b` | CTA buttons, logo |
-| `--clr-secondary` | `#4ecdc4` | Secondary actions |
-| `--clr-accent` | `#ffe66d` | Badges, highlights |
-| Card purples/oranges/greens/blues/pinks/yellows | — | Activity card accents |
+All pairings meet **WCAG AA** contrast (4.5:1 normal, 3:1 large text).
 
-All foreground-background colour pairings meet **WCAG AA** minimum contrast (4.5 : 1 for normal text, 3 : 1 for large text).
+### Spacing & Tap Targets
 
----
-
-### Spacing & Sizing
-
-- Minimum tap target: **52 px** (buttons) for small-hand accessibility.
-- Cards use generous `padding: 1.5 rem` and `gap: 2 rem` grid spacing.
-- `border-radius` tokens range from `0.75 rem` (small) to `9999 px` (pill buttons) for a consistently soft, friendly look.
-
----
-
-### Component Highlights
-
-| Component | Child-Friendly Features |
-|-----------|------------------------|
-| **Header** | Sticky, large logo, pill nav links that highlight on hover |
-| **Hero** | Animated floating emoji bubbles, large CTA button |
-| **Activity Cards** | Colour-coded top borders, emoji icons, hover lift effect, `tabindex` for keyboard access |
-| **Badges** | Translucent glass cards on a purple gradient; scale on hover |
-| **Footer** | Dark background, readable contrast, simple links |
+- Minimum button height: **52 px** (large enough for small hands)
+- Card padding: `2rem`; grid gap: `2rem`
+- Border-radius: `0.75rem` → `9999px` (pills) for a soft, friendly feel
 
 ---
 
 ## Getting Started
 
-The app is a **static HTML + CSS** site with no build step required.
+No build step required — pure HTML + CSS.
 
 ```bash
-# Open locally
 open index.html
+# or
+python3 -m http.server 8080
 ```
 
-For deployment to Netlify (or any static host), zip `index.html`, `styles.css`, and `_redirects` and upload — or use the pre-built `KiddieGenius_Build.zip`.
+Deploy to **Netlify**: upload `KiddieGenius_Build.zip` via the dashboard.
 
 ---
 
 ## Accessibility
 
-- All interactive elements have visible `:focus-visible` outlines.
-- `aria-label` attributes are provided on icon-only controls.
-- `role="button"` and `tabindex="0"` on card elements allow keyboard navigation.
-- Semantic HTML5 landmark elements (`<header>`, `<main>`, `<footer>`, `<nav>`, `<section>`, `<article>`).
+- `:focus-visible` outlines on all interactive elements (yellow, 3 px)
+- `aria-label` / `role` on cards and icon-only controls
+- Semantic HTML5 landmarks throughout
+- Responsive: 320 px → 1400 px
 
 ---
 

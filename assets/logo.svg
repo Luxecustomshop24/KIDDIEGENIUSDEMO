@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="globe" cx="40%" cy="35%" r="65%">
+      <stop offset="0%"   stop-color="#4fb8f0"/>
+      <stop offset="100%" stop-color="#1a6bc8"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="rgba(255,255,255,.25)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+    <clipPath id="circle-clip">
+      <circle cx="100" cy="100" r="94"/>
+    </clipPath>
+  </defs>
+
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="98" fill="#162b6e"/>
+  <!-- Ocean -->
+  <circle cx="100" cy="100" r="94" fill="url(#globe)"/>
+  <!-- Glow highlight -->
+  <ellipse cx="75" cy="65" rx="45" ry="35" fill="url(#glow)"/>
+
+  <!-- Continents (simplified North + South America silhouette) -->
+  <g clip-path="url(#circle-clip)" fill="#5ab944" stroke="#3a8a1f" stroke-width="1">
+    <!-- North America -->
+    <path d="M30,30 Q55,20 80,35 Q90,50 85,70 Q70,85 55,95 Q35,90 25,70 Q15,50 30,30Z"/>
+    <!-- South America -->
+    <path d="M55,100 Q75,95 85,115 Q88,140 75,165 Q60,178 45,165 Q32,145 38,120 Q45,105 55,100Z"/>
+    <!-- Europe/Africa hint (right side) -->
+    <path d="M135,28 Q155,25 165,40 Q170,60 158,75 Q145,80 132,68 Q122,50 135,28Z"/>
+    <path d="M140,90 Q162,88 170,110 Q172,140 158,162 Q142,175 126,165 Q115,145 120,118 Q128,95 140,90Z"/>
+  </g>
+
+  <!-- White text with navy shadow -->
+  <text x="100" y="125" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-weight="900" font-size="22" fill="#162b6e" dx="1.5" dy="1.5">Kiddie</text>
+  <text x="100" y="125" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-weight="900" font-size="22" fill="white">Kiddie</text>
+  <text x="100" y="151" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-weight="900" font-size="22" fill="#162b6e" dx="1.5" dy="1.5">Genius</text>
+  <text x="100" y="151" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-weight="900" font-size="22" fill="white">Genius</text>
+  <text x="100" y="177" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-weight="900" font-size="22" fill="#162b6e" dx="1.5" dy="1.5">World</text>
+  <text x="100" y="177" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-weight="900" font-size="22" fill="white">World</text>
+</svg>

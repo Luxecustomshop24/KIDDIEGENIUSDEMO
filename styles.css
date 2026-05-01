@@ -1,6 +1,7 @@
 /* ==========================================================================
-   KiddieGenius — Child-Friendly Design System
-   Primary font: Nunito (Google Fonts) — rounded, highly readable
+   Kiddie Genius World — Child-Friendly Design System
+   Primary font: Nunito (Google Fonts) — rounded, matches logo lettering style
+   Brand palette: navy #162b6e · sky-blue #2b7de9 · globe-green #5ab944 · white
    ========================================================================== */
 
 /* ---------- Design Tokens ---------- */
@@ -17,16 +18,17 @@
   --lh-body: 1.7;
   --lh-head: 1.2;
 
-  /* Colour palette — bright but not harsh */
-  --clr-bg:          #fffbf0;   /* warm cream   */
+  /* Colour palette — drawn from the Kiddie Genius World globe logo */
+  --clr-bg:          #eef6ff;   /* pale sky blue — matches globe ocean  */
   --clr-surface:     #ffffff;
-  --clr-primary:     #ff6b6b;   /* coral-red    */
-  --clr-primary-dk:  #e05555;
-  --clr-secondary:   #4ecdc4;   /* teal-mint    */
-  --clr-secondary-dk:#38b2aa;
-  --clr-accent:      #ffe66d;   /* sunny yellow */
-  --clr-text:        #2d3436;
-  --clr-text-muted:  #636e72;
+  --clr-navy:        #162b6e;   /* deep navy from logo outline          */
+  --clr-primary:     #2b7de9;   /* bright sky blue — logo ocean         */
+  --clr-primary-dk:  #1a60c0;
+  --clr-secondary:   #5ab944;   /* globe green — continents             */
+  --clr-secondary-dk:#429132;
+  --clr-accent:      #ffe040;   /* sunny yellow                         */
+  --clr-text:        #162b6e;   /* navy keeps on-brand feel             */
+  --clr-text-muted:  #4a5a8a;
   --clr-white:       #ffffff;
 
   /* Card accent colours */
@@ -138,15 +140,15 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--clr-white);
-  box-shadow: var(--shadow-sm);
+  background: var(--clr-navy);
+  box-shadow: 0 3px 12px rgba(22,43,110,.35);
   padding: 0 var(--space-lg);
 }
 
 .header-inner {
   max-width: 1100px;
   margin: 0 auto;
-  height: 70px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -156,56 +158,81 @@ a {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: var(--fs-xl);
+  gap: 0.65rem;
+  font-size: var(--fs-lg);
   font-weight: 900;
-  color: var(--clr-primary);
+  color: var(--clr-white);
   transition: transform var(--transition);
+  text-decoration: none;
 }
 .logo:hover { transform: scale(1.05); }
-.logo-icon { font-size: 1.6rem; }
+
+.logo-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,.35);
+  flex-shrink: 0;
+}
 
 .nav {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
 }
 
 .nav-link {
   font-size: var(--fs-sm);
   font-weight: 800;
-  color: var(--clr-text);
+  color: rgba(255,255,255,.85);
   padding: 0.6rem 1.1rem;
   border-radius: var(--radius-full);
   transition: background var(--transition), color var(--transition);
+  text-decoration: none;
 }
 .nav-link:hover {
-  background: var(--clr-accent);
-  color: var(--clr-text);
+  background: rgba(255,255,255,.18);
+  color: var(--clr-white);
 }
 
 /* ---------- Hero ---------- */
 .hero {
-  background: linear-gradient(135deg, #fff5f5 0%, #e8f8ff 50%, #fff9e6 100%);
+  background: linear-gradient(160deg, #d0e9ff 0%, #e8f5e2 55%, #fff9d0 100%);
   padding: var(--space-2xl) var(--space-lg);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-xl);
-  min-height: 540px;
+  min-height: 560px;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width: 620px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-md);
   position: relative;
   z-index: 1;
+}
+
+/* Hero logo — bounces gently */
+.hero-logo {
+  width: 190px;
+  height: 190px;
+  object-fit: contain;
+  border-radius: 50%;
+  filter: drop-shadow(0 10px 24px rgba(22,43,110,.22));
+  animation: bounce 3s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0);    }
+  50%       { transform: translateY(-12px); }
 }
 
 .hero-title {
@@ -345,7 +372,7 @@ a {
 
 /* ---------- Achievements ---------- */
 .achievements {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--clr-navy) 0%, #2b5baa 100%);
   color: var(--clr-white);
 }
 
@@ -388,7 +415,7 @@ a {
 
 /* ---------- About ---------- */
 .about {
-  background: linear-gradient(135deg, #fff9e6 0%, #e8fff9 100%);
+  background: linear-gradient(135deg, #eef6ff 0%, #edfce7 100%);
 }
 
 .about-inner {
@@ -424,16 +451,23 @@ a {
   flex: 0 0 auto;
 }
 
-.big-emoji {
-  font-size: 8rem;
-  line-height: 1;
-  animation: float 3s ease-in-out infinite;
-  filter: drop-shadow(0 8px 16px rgba(0,0,0,.15));
+/* Logo in about section — slow spin */
+.about-logo {
+  width: 210px;
+  height: 210px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 20px rgba(22,43,110,.20));
+  animation: spin-slow 12s linear infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
 }
 
 /* ---------- Footer ---------- */
 .site-footer {
-  background: var(--clr-text);
+  background: var(--clr-navy);
   color: var(--clr-white);
   padding: var(--space-xl) var(--space-lg);
 }
@@ -448,14 +482,29 @@ a {
   text-align: center;
 }
 
+.footer-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.footer-logo-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,.3);
+}
+
 .footer-brand {
   font-size: var(--fs-lg);
   font-weight: 900;
+  color: var(--clr-white);
 }
 
 .footer-copy {
   font-size: var(--fs-sm);
-  color: rgba(255,255,255,.7);
+  color: rgba(255,255,255,.65);
 }
 
 .footer-nav {
@@ -469,10 +518,11 @@ a {
 .footer-link {
   font-size: var(--fs-sm);
   font-weight: 700;
-  color: rgba(255,255,255,.8);
+  color: rgba(255,255,255,.75);
   transition: color var(--transition);
   padding: 0.4rem 0.8rem;
   border-radius: var(--radius-sm);
+  text-decoration: none;
 }
 
 .footer-link:hover { color: var(--clr-accent); }

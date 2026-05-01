@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiddie Genius World 🌍</title>
+  <!-- Nunito: rounded, highly readable — matches the brand lettering style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    /* Central CDN fallback URLs — avoids repeating them on every <img> tag */
+    var CDN = {
+      logo:  'https://github.com/user-attachments/assets/cbb6d310-94be-47b8-b5b9-c9785f2ccc1f',
+      gray:  'https://github.com/user-attachments/assets/570f4942-ea15-4add-a6d7-e9aa907c1213',
+      cover: 'https://github.com/user-attachments/assets/06d94dfe-00d6-469a-9e9e-f1ea69372cef'
+    };
+    function imgFallback(el, key) {
+      el.onerror = null;
+      el.src = CDN[key];
+    }
+    function coverFallback(el) {
+      el.style.display = 'none';
+      el.parentElement.classList.add('brand-banner--css');
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="Kiddie Genius World Home">
+        <img
+          src="assets/logo.svg" onerror="imgFallback(this,'logo')"
+          alt="Kiddie Genius World globe logo"
+          class="logo-img"
+          width="48" height="48"
+        />
+        <span class="logo-text">Kiddie Genius World</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#activities" class="nav-link">Activities</a>
+        <a href="#meet-gray"  class="nav-link">Meet Gray</a>
+        <a href="#about"      class="nav-link">About</a>
+        <a href="#contact"    class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== BRAND BANNER ===== -->
+    <!--
+      Primary: the real Facebook cover photo (fbcoverkgw.png) served from GitHub CDN.
+      If that URL is inaccessible (e.g. self-hosted dev), the CSS banner below is
+      shown instead — it replicates the cover's sky-blue gradient, rainbow arc,
+      rainbow brand text, and castle silhouette.
+    -->
+    <section class="brand-banner" aria-label="Kiddie Genius World — Learn. Play. Grow.">
+      <img
+        src="https://github.com/user-attachments/assets/06d94dfe-00d6-469a-9e9e-f1ea69372cef"
+        alt="Kiddie Genius World — Learn. Play. Grow. A colorful scene with Gray the cheetah, cartoon characters, a rainbow, and educational toys."
+        class="brand-banner__img"
+        fetchpriority="high"
+        onerror="coverFallback(this)"
+      />
+    </section>
+
+    <!-- ===== HERO ACTION STRIP ===== -->
+    <section class="hero" aria-labelledby="hero-heading">
+
+      <!-- Gray + speech bubble -->
+      <div class="hero-mascot">
+        <div class="speech-bubble" role="note">
+          <p>Hi! I'm <strong>Gray!</strong> 👋</p>
+          <p>Let's learn something <strong>amazing</strong> today!</p>
+        </div>
+        <img
+          src="assets/gray.svg" onerror="imgFallback(this,'gray')"
+          alt="Gray, a friendly cartoon cheetah cub wearing a Kiddie Genius cap"
+          class="mascot-img mascot-img--hero"
+        />
+      </div>
+
+      <!-- CTA copy -->
+      <div class="hero-content">
+        <h1 id="hero-heading" class="hero-title">
+          Ready to<br />
+          <span class="hero-title__rainbow">Learn. Play. Grow.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Fun adventures designed just for curious kids like you!
+        </p>
+        <div class="hero-ctas">
+          <a href="#activities" class="btn btn-primary btn-xl">
+            Start Exploring 🚀
+          </a>
+          <a href="#meet-gray" class="btn btn-outline btn-xl">
+            Meet Gray 🐆
+          </a>
+        </div>
+      </div>
+
+      <!-- Floating bubbles -->
+      <div class="hero-illustration" aria-hidden="true">
+        <div class="bubble bubble-1">🎨</div>
+        <div class="bubble bubble-2">📚</div>
+        <div class="bubble bubble-3">🎵</div>
+        <div class="bubble bubble-4">🔢</div>
+        <div class="bubble bubble-5">🌈</div>
+      </div>
+    </section>
+
+    <!-- ===== ACTIVITIES ===== -->
+    <section class="activities" id="activities" aria-labelledby="activities-heading">
+      <div class="section-inner">
+
+        <h2 id="activities-heading" class="section-title">
+          Pick Your Adventure! 🎮
+        </h2>
+
+        <!-- Gray narrator tip -->
+        <div class="gray-tip" role="note">
+          <img
+            src="assets/gray.svg" onerror="imgFallback(this,'gray')"
+            alt="Gray the cheetah cub"
+            class="gray-tip__avatar"
+            width="80" height="80"
+          />
+          <div class="gray-tip__bubble">
+            <strong>Gray says:</strong> "Pick any activity below — there are no wrong choices, only fun ones! 🐆✨"
+          </div>
+        </div>
+
+        <div class="cards-grid">
+
+          <article class="card card--red" tabindex="0" role="button" aria-label="Math Games">
+            <div class="card-icon" aria-hidden="true">🔢</div>
+            <h3 class="card-title">Math Games</h3>
+            <p class="card-desc">Count, add &amp; have fun with numbers!</p>
+            <span class="card-badge">Ages 3–8</span>
+          </article>
+
+          <article class="card card--orange" tabindex="0" role="button" aria-label="Reading Fun">
+            <div class="card-icon" aria-hidden="true">📖</div>
+            <h3 class="card-title">Reading Fun</h3>
+            <p class="card-desc">Discover amazing stories and learn new words!</p>
+            <span class="card-badge">Ages 4–9</span>
+          </article>
+
+          <article class="card card--green" tabindex="0" role="button" aria-label="Art Studio">
+            <div class="card-icon" aria-hidden="true">🎨</div>
+            <h3 class="card-title">Art Studio</h3>
+            <p class="card-desc">Draw, colour, and create masterpieces!</p>
+            <span class="card-badge">Ages 2–10</span>
+          </article>
+
+          <article class="card card--blue" tabindex="0" role="button" aria-label="Music and Rhythm">
+            <div class="card-icon" aria-hidden="true">🎵</div>
+            <h3 class="card-title">Music &amp; Rhythm</h3>
+            <p class="card-desc">Sing, clap, and dance to cool beats!</p>
+            <span class="card-badge">Ages 2–8</span>
+          </article>
+
+          <article class="card card--purple" tabindex="0" role="button" aria-label="Science Lab">
+            <div class="card-icon" aria-hidden="true">🔬</div>
+            <h3 class="card-title">Science Lab</h3>
+            <p class="card-desc">Explore how the world works with fun experiments!</p>
+            <span class="card-badge">Ages 5–10</span>
+          </article>
+
+          <article class="card card--yellow" tabindex="0" role="button" aria-label="Puzzle Time">
+            <div class="card-icon" aria-hidden="true">🧩</div>
+            <h3 class="card-title">Puzzle Time</h3>
+            <p class="card-desc">Solve tricky puzzles and train your brain!</p>
+            <span class="card-badge">Ages 3–9</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ACHIEVEMENTS ===== -->
+    <section class="achievements" aria-labelledby="achievements-heading">
+      <div class="section-inner">
+        <h2 id="achievements-heading" class="section-title achievements__title">
+          Earn Cool Badges! 🏆
+        </h2>
+        <div class="badges-row">
+          <div class="badge-item">
+            <span class="badge-emoji">⭐</span>
+            <span class="badge-label">Star Reader</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-emoji">🥇</span>
+            <span class="badge-label">Math Champ</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-emoji">🎨</span>
+            <span class="badge-label">Art Wizard</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-emoji">🚀</span>
+            <span class="badge-label">Explorer</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-emoji">🌍</span>
+            <span class="badge-label">World Kid</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MEET GRAY ===== -->
+    <section class="meet-gray" id="meet-gray" aria-labelledby="meet-gray-heading">
+      <div class="section-inner meet-gray-inner">
+
+        <div class="meet-gray__visual">
+          <img
+            src="assets/gray.svg" onerror="imgFallback(this,'gray')"
+            alt="Gray the cheetah cub mascot of Kiddie Genius World"
+            class="mascot-img mascot-img--meet"
+          />
+        </div>
+
+        <div class="meet-gray__text">
+          <h2 id="meet-gray-heading" class="section-title meet-gray__heading">
+            Meet Gray! 🐆
+          </h2>
+          <p class="meet-gray__intro">
+            Hi there! I'm <strong>Gray</strong>, your Kiddie Genius guide.
+            I'm a 4-year-old cheetah cub who <em>loves</em> to learn new things every day!
+          </p>
+          <ul class="meet-gray__facts">
+            <li>🎓 I help you through every lesson</li>
+            <li>💡 I give hints when things get tricky</li>
+            <li>🎉 I cheer loudly for every win you earn</li>
+            <li>🌍 My cap is a globe — because learning is everywhere!</li>
+          </ul>
+          <a href="#activities" class="btn btn-primary">
+            Learn with Gray 🐆
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="section-inner about-inner">
+        <div class="about-text">
+          <h2 id="about-heading" class="section-title">
+            Why Kiddie Genius World? 💡
+          </h2>
+          <ul class="about-list">
+            <li>🎯 Learning games designed by child educators</li>
+            <li>🔒 Safe, ad-free environment for kids</li>
+            <li>📊 Track progress &amp; celebrate every win</li>
+            <li>🌍 Available on all devices — phone, tablet, laptop</li>
+          </ul>
+          <a href="#activities" class="btn btn-secondary">
+            Try for Free 🎉
+          </a>
+        </div>
+        <div class="about-illustration" aria-hidden="true">
+          <img
+            src="assets/logo.svg" onerror="imgFallback(this,'logo')"
+            alt=""
+            class="about-logo"
+            width="220" height="220"
+          />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+
+      <!-- Gray waves goodbye -->
+      <div class="footer-mascot" aria-hidden="true">
+        <img
+          src="assets/gray.svg" onerror="imgFallback(this,'gray')"
+          alt=""
+          class="mascot-img mascot-img--footer"
+        />
+        <p class="footer-mascot__wave">See you next time! 👋</p>
+      </div>
+
+      <div class="footer-brand-row">
+        <img
+          src="assets/logo.svg" onerror="imgFallback(this,'logo')"
+          alt=""
+          class="footer-logo-img"
+          width="44" height="44"
+        />
+        <p class="footer-brand">Kiddie Genius World</p>
+      </div>
+      <p class="footer-copy">Made with ❤️ for young learners everywhere.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#" class="footer-link">Privacy</a>
+        <a href="#" class="footer-link">Parents</a>
+        <a href="#" class="footer-link">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
